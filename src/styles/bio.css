@@ -1,0 +1,421 @@
+/* ─── BIO PAGE — Abricó ─── */
+
+/* ─── HERO ─── */
+.bio-hero {
+  width: 100%;
+  height: 62vh;
+  min-height: 360px;
+  max-height: 620px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bio-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.bio-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 13, 9, 0.90) 0%,
+    rgba(14, 13, 9, 0.40) 50%,
+    rgba(14, 13, 9, 0.10) 100%
+  );
+}
+
+.bio-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px 48px;
+  max-width: 580px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.bio-hero-logo {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.bio-logo {
+  height: 60px;
+  width: auto;
+}
+
+.bio-eyebrow {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--bg-deep);
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+
+.bio-headline {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 400;
+  color: var(--card);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.bio-subline {
+  font-size: clamp(12px, 1.9vw, 14px);
+  color: rgba(255, 253, 248, 0.72);
+  font-weight: 400;
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+
+/* ─── LINK BUTTONS ─── */
+.bio-links-section {
+  background: var(--bg);
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bio-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.bio-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid rgba(36, 32, 26, 0.22);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.bio-link-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.bio-link-btn--filled {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--card);
+}
+
+.bio-link-btn--filled:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: var(--card);
+}
+
+.bio-link-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* ─── ADDRESS ─── */
+.bio-address-section {
+  background: var(--bg);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.bio-address {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  color: var(--ink-soft);
+  font-size: .88rem;
+  line-height: 1.65;
+  max-width: 420px;
+  font-family: var(--font-body);
+}
+
+.bio-address svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: .15rem;
+  color: var(--accent);
+}
+
+/* ─── FORM SECTION ─── */
+.bio-form-section {
+  background: var(--bg);
+  padding: 44px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bio-section-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  font-family: var(--font-body);
+  margin-bottom: 12px;
+}
+
+.bio-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 40px;
+}
+
+/* ─── FORM CARD ─── */
+.bio-form-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 44px 36px;
+  text-align: left;
+}
+
+.bio-form-card .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem 2rem;
+}
+
+.bio-form-card .field {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.bio-form-card .field--full { grid-column: 1 / -1; }
+
+.bio-form-card .field label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.bio-form-card .field input,
+.bio-form-card .field select,
+.bio-form-card .field textarea {
+  font-family: var(--font-body);
+  font-size: .98rem;
+  color: var(--ink);
+  padding: .6rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(36, 32, 26, 0.25);
+  background: transparent;
+  transition: border-color .3s;
+  width: 100%;
+  border-radius: 0;
+}
+
+.bio-form-card .field input::placeholder,
+.bio-form-card .field textarea::placeholder { color: var(--ink-faint); }
+.bio-form-card .field select { color: var(--ink); }
+.bio-form-card .field select option { color: var(--ink); background: var(--card); }
+.bio-form-card .field textarea { resize: vertical; min-height: 80px; }
+
+.bio-form-card .field input:focus,
+.bio-form-card .field select:focus,
+.bio-form-card .field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+/* Submit button */
+.bio-submit {
+  width: 100%;
+  margin-top: 2rem;
+  background: var(--ink);
+  color: var(--card);
+  padding: 1rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background .25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+}
+
+.bio-submit:hover { background: #000; }
+.bio-submit:disabled { opacity: .55; cursor: not-allowed; }
+
+/* Success state */
+.bio-form-success {
+  display: none;
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+.bio-form-success.is-visible { display: block; }
+.bio-form-success h3 { font-size: 1.25rem; margin-bottom: .6rem; color: var(--ink); font-family: var(--font-display); font-weight: 400; }
+.bio-form-success p { color: var(--ink-soft); margin: 0; font-size: .92rem; }
+
+/* ─── FOOTER ─── */
+.bio-footer {
+  background: var(--bg-deep);
+  border-top: none;
+}
+
+.bio-footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 44px 24px 40px;
+}
+
+.bio-footer__logo {
+  height: 64px;
+  width: auto;
+  opacity: .85;
+}
+
+.bio-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
+
+.bio-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(36, 32, 26, 0.18);
+  color: var(--ink-soft);
+  transition: border-color .25s, color .25s;
+  flex-shrink: 0;
+}
+
+.bio-social-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.bio-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 32px;
+}
+
+.bio-footer__copy {
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: .4px;
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+.bio-footer__dmove {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-decoration: none;
+  letter-spacing: .4px;
+  transition: color .25s;
+  font-family: var(--font-body);
+}
+
+.bio-footer__dmove:hover { color: var(--ink); }
+
+.bio-footer__dmove-logo {
+  height: 13px;
+  width: auto;
+  opacity: .45;
+  transition: opacity .25s;
+}
+
+.bio-footer__dmove:hover .bio-footer__dmove-logo { opacity: .8; }
+
+/* ─── HONEYPOT ─── */
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── FLATPICKR — tema claro bio ─── */
+.bio-form-card .flatpickr-calendar {
+  background: var(--card);
+  border: 1px solid rgba(36, 32, 26, .14);
+  border-radius: 0;
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+  font-family: var(--font-body);
+}
+.bio-form-card .flatpickr-month,
+.bio-form-card .flatpickr-current-month { color: var(--ink); fill: var(--ink); }
+.bio-form-card .flatpickr-current-month .flatpickr-monthDropdown-months,
+.bio-form-card .flatpickr-current-month input.cur-year { color: var(--ink); background: transparent; }
+.bio-form-card .flatpickr-prev-month,
+.bio-form-card .flatpickr-next-month { color: var(--ink-soft); fill: var(--ink-soft); }
+.bio-form-card span.flatpickr-weekday { color: var(--ink-faint); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.bio-form-card .flatpickr-day { color: var(--ink); border-radius: 0; }
+.bio-form-card .flatpickr-day:hover { background: var(--accent-soft); border-color: transparent; }
+.bio-form-card .flatpickr-day.today { border-color: var(--accent); }
+.bio-form-card .flatpickr-day.selected,
+.bio-form-card .flatpickr-day.selected:hover { background: var(--accent); border-color: var(--accent); color: var(--card); }
+.bio-form-card .flatpickr-day.flatpickr-disabled,
+.bio-form-card .flatpickr-day.prevMonthDay,
+.bio-form-card .flatpickr-day.nextMonthDay { color: var(--ink-faint); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 480px) {
+  .bio-form-card { padding: 32px 20px; }
+  .bio-form-card .form-grid { grid-template-columns: 1fr; }
+}

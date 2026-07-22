@@ -1,0 +1,456 @@
+---
+import Base from '../layouts/Base.astro';
+import config from '../../config.json';
+import Img from '../components/ui/Img.astro';
+import '../styles/index.css';
+import '../styles/eventos-corporativos.css';
+---
+
+<Base
+  title="Espaço Abricó · Eventos Corporativos à beira-mar em São Sebastião"
+  description="Confraternizações, plenárias, workshops e offsites no litoral norte de São Paulo. Infraestrutura completa e hospedagem beira-mar para até 100 colaboradores."
+  ogImage="/images/og-eventos-corporativos.jpg"
+  whatsappFormId="whats-form-corp"
+  whatsappShowEmpresa={true}
+  whatsappEventTypes={[
+    'Confraternização corporativa',
+    'Corporativo',
+    'Feiras e Exposições',
+    'Happy Hours',
+    'Masterclass e Palestras',
+    'Mentorias e Treinamentos',
+    'Offsite corporativo',
+    'Reuniões de Networking',
+    'Workshops, Conferências e Seminários',
+    'Outros',
+  ]}
+>
+<a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
+<div class="grain" aria-hidden="true"></div>
+
+<main id="conteudo">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="topo">
+  <div class="hero__media">
+    <Img src="https://media.dmove.com.br/clients/abrico/photos/ChatGPT_Image_14_de_jul._de_2026,_13_28_43.webp" alt="Vista do Espaço Abricó com área de eventos à beira-mar no litoral norte de São Paulo" priority />
+  </div>
+  <div class="hero__top container">
+    <Img src="https://media.dmove.com.br/clients/abrico/photos/Logo_Abrico.webp" alt="Espaço Abricó" class="hero__logo" />
+    <p class="eyebrow">São Sebastião · Eventos corporativos à beira-mar</p>
+    <h1 class="hero__title">Leve o evento da sua empresa para o litoral norte de São Paulo</h1>
+    <p class="hero__subtitle">Um cenário pé na areia para criar experiências corporativas fora do óbvio.</p>
+  </div>
+  <div class="hero__bottom container">
+    <a href="#tipos" class="btn btn--ghost">
+      Conheça o espaço
+      <span class="btn__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+      </span>
+    </a>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"></div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section class="sobre section-pad" id="sobre">
+  <div class="container sobre__grid">
+    <div class="sobre__visual reveal">
+      <div class="sobre__main sobre__main--video">
+        <video
+          src="https://media.dmove.com.br/clients/abrico/videos/A_beleza_particular_desse_lugar_e_incrivel.webm"
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="Vídeo do Espaço Abricó à beira-mar"
+        ></video>
+      </div>
+    </div>
+    <div class="sobre__text reveal reveal-2">
+      <p class="eyebrow">Sobre o Abricó</p>
+      <h2 class="section-head__title" style="margin-bottom:1.3rem;">Uma proposta diferente de tudo que sua empresa já viu</h2>
+      <p>Desde 2015, o Espaço Abricó recebe eventos corporativos com excelência. Aqui, a seriedade que a ocasião exige convive com a proximidade do mar, mudando a forma como o grupo vive a experiência.</p>
+      <p>A logística é tratada com rigor do início ao fim, com uma equipe que acompanha cada etapa para que a empresa possa se concentrar apenas na pauta do dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TIPOS DE EVENTOS ===================== -->
+<section class="tipos section-pad" id="tipos">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Eventos que recebemos</p>
+      <h2 class="section-head__title">Um horizonte, infinitas possibilidades</h2>
+      <p class="section-head__text">Seja qual for o objetivo, ele ganha outra dimensão quando acontece de frente para o mar.</p>
+    </div>
+    <div class="tipos-grid reveal reveal-2">
+      <div class="tipo-card">
+        <h3>Confraternizações</h3>
+        <p>Fim de ano, aniversário da empresa ou fechamento de metas, com estrutura para reunir todo o time.</p>
+      </div>
+      <div class="tipo-card">
+        <h3>Plenárias e convenções</h3>
+        <p>Ambientes amplos para apresentações, alinhamentos e grandes encontros corporativos.</p>
+      </div>
+      <div class="tipo-card">
+        <h3>Workshops e treinamentos</h3>
+        <p>Espaços reservados para imersões de um ou mais dias, com foco total na programação.</p>
+      </div>
+      <div class="tipo-card">
+        <h3>Reuniões de diretoria e offsites</h3>
+        <p>Encontros menores e mais privados, para decisões que pedem discrição.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOSPEDAGEM ===================== -->
+<section class="hospedagem section-pad" id="hospedagem">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Imersão corporativa</p>
+      <h2 class="section-head__title">Um fim de semana inteiro dedicado ao seu time</h2>
+      <p class="section-head__text">Oferecemos hospedagem beira-mar para até 100 colaboradores. Menos deslocamento, mais tempo de convívio e resultado real fora do horário comercial.</p>
+    </div>
+
+    <div class="carousel reveal reveal-2" data-carousel data-lightbox-group="hospedagem">
+      <div class="carousel__viewport">
+        <div class="carousel__track" data-track>
+          <div class="carousel__slide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/DSC0821111.webp" alt="Acomodação do Espaço Abricó" style="object-position: center top" /></div>
+          <div class="carousel__slide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/DSC080.webp" alt="Quarto de hospedagem com decoração sofisticada" /></div>
+          <div class="carousel__slide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/DSC079.webp" alt="Quarto de hospedagem aconchegante com decoração artística" /></div>
+          <div class="carousel__slide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/DSC082.webp" alt="Mesa de café da manhã com frutas frescas" /></div>
+        </div>
+      </div>
+      <div class="carousel__controls">
+        <button class="carousel__btn" data-prev aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="carousel__btn" data-next aria-label="Próxima foto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESTRUTURA ===================== -->
+<section class="estrutura section-pad ec-estrutura" id="estrutura">
+  <div class="estrutura__bg" data-bg-slideshow>
+    <div class="bg-slide is-active"><Img src="https://media.dmove.com.br/clients/abrico/photos/steeivan-260.webp" alt="" /></div>
+    <div class="bg-slide"><Img src="https://media.dmove.com.br/clients/abrico/photos/steeivan-268.webp" alt="" /></div>
+    <div class="bg-slide"><Img src="https://media.dmove.com.br/clients/abrico/photos/steeivan-257.webp" alt="" /></div>
+    <div class="bg-slide"><Img src="https://media.dmove.com.br/clients/abrico/photos/IFisaefelipeabrico0004.webp" alt="" /></div>
+    <div class="bg-slide"><Img src="https://media.dmove.com.br/clients/abrico/photos/steeivan-259.webp" alt="" /></div>
+  </div>
+  <div class="container estrutura__content">
+    <div class="section-head reveal">
+      <p class="eyebrow">Infraestrutura</p>
+      <h2 class="section-head__title">Cada detalhe organizado para uma experiência sem preocupações</h2>
+      <p class="section-head__text">Infraestrutura completa, sem abrir mão do privilégio de estar na praia.</p>
+    </div>
+
+    <div class="icon-grid reveal reveal-2">
+      <div class="icon-card">
+        <span class="icon-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </span>
+        <h3>Sala de apoio</h3>
+        <p>Espaço reservado para organização prévia e conversas restritas.</p>
+      </div>
+      <div class="icon-card">
+        <span class="icon-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17.5 8a5 5 0 010 8"/><path d="M20 5.5a9 9 0 010 13"/></svg>
+        </span>
+        <h3>Som e luz</h3>
+        <p>Equipamento pronto para apresentações, discursos e dinâmicas.</p>
+      </div>
+      <div class="icon-card">
+        <span class="icon-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4"/><path d="M3 11h18v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5z"/><path d="M5 18v2M19 18v2"/></svg>
+        </span>
+        <h3>Mobiliário</h3>
+        <p>Plenária e recepção equipadas para diferentes formatos.</p>
+      </div>
+      <div class="icon-card">
+        <span class="icon-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </span>
+        <h3>Atendimento próximo</h3>
+        <p>Um time que acompanha o evento antes, durante e depois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEEDBACK ===================== -->
+<section class="feedback section-pad" id="feedback">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow">Feedback</p>
+      <h2 class="section-head__title">Quem organizou um encontro aqui não esquece o resultado</h2>
+      <p class="section-head__text">Veja o que empresas que passaram pelo Abricó têm a dizer.</p>
+    </div>
+
+    <div class="testi reveal reveal-2" data-testi>
+      <div class="testi__slide is-active">
+        <p class="testi__quote">"Espaço bem organizado. Design de interior muito aconchegante, o tipo de lugar que te abraça. Atendimento e recepção ótimos. Buffet com aperitivos e prato principal muito saborosos e drinks sem álcool com muita qualidade."</p>
+        <p class="testi__name">Luiza Fonseca</p>
+      </div>
+      <div class="testi__slide">
+        <p class="testi__quote">"Perfeito salão de festas, de frente para o mar, local amplo com mesas e cadeiras grandes, salão de danças grande ao ar livre, salão de jantar com vista para o mar. Recomendo."</p>
+        <p class="testi__name">Liberato Chiovitti</p>
+      </div>
+      <div class="testi__slide">
+        <p class="testi__quote">"O Espaço Abricó é único, toda sofisticação e glamour em um lugar paradisíaco em contato direto com a natureza, unindo o bom gosto e requinte, em harmonia com o verde da serra do mar e o lindo mar azul do litoral norte de são paulo."</p>
+        <p class="testi__name">Mário Torres</p>
+      </div>
+      <div class="testi__dots" data-testi-dots></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERIA ===================== -->
+<section class="galeria section-pad" id="galeria">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Galeria</p>
+      <h2 class="section-head__title">Veja como o próximo encontro da sua empresa pode ser</h2>
+      <p class="section-head__text">Cada foto mostra um pouco do que o grupo vai encontrar por aqui.</p>
+    </div>
+  </div>
+
+  <div class="gallery-carousel reveal reveal-2" data-carousel data-lightbox-group="galeria">
+    <div class="carousel__viewport">
+      <div class="carousel__track" data-track>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_12.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_11.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_10.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_9.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_8.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_7.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_6.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_5.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_4.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_3.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp_2.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+        <div class="carousel__slide carousel__slide--wide" data-lightbox><Img src="https://media.dmove.com.br/clients/abrico/photos/galeria_corp.webp" alt="Evento corporativo no Espaço Abricó" /></div>
+      </div>
+    </div>
+    <div class="carousel__controls container">
+      <button class="carousel__btn" data-prev aria-label="Foto anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="carousel__btn" data-next aria-label="Próxima foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada da foto">
+  <button class="lightbox__close" data-lightbox-close aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__prev" data-lightbox-prev aria-label="Anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+  <div class="lightbox__img-wrap"><Img src="/images/placeholder.jpg" alt="" /></div>
+  <button class="lightbox__nav lightbox__next" data-lightbox-next aria-label="Próxima">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+</div>
+
+<!-- ===================== CONTATO ===================== -->
+<section class="contato section-pad" id="contato">
+  <div class="contato__bg" data-lightbox-group="contato" data-lightbox>
+    <Img src="https://media.dmove.com.br/clients/abrico/photos/20250329_Gabrielie_Bruno-1026.webp" alt="Vista do espaço para eventos corporativos à beira-mar" />
+  </div>
+  <div class="container contato__inner">
+    <div class="contato__text reveal">
+      <h2 class="section-head__title">O cenário já existe. Falta encaixar na agenda da empresa.</h2>
+      <p class="section-head__text">Preencha o formulário para receber nosso contato.</p>
+    </div>
+
+    <div class="form-shell reveal reveal-2">
+      <div class="form-core">
+        <form
+          id="contactForm"
+          data-form-id="lead-form-corp"
+          data-project={config.project_slug}
+          data-submit-url={config.forms['lead-form'].webhooks[0]}
+          data-redirect={config.forms['lead-form'].redirect_on_success}
+          data-success-id="formSuccess"
+          novalidate
+        >
+          <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="Nome" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="Empresa" autocomplete="organization" required>
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="WhatsApp" autocomplete="tel" required data-mask="phone">
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="E-mail" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="data">Data do evento</label>
+              <input type="text" id="data" name="Data do evento" placeholder="dd/mm/aaaa" autocomplete="off" data-datepicker readonly>
+            </div>
+            <div class="field">
+              <label for="pessoas">Número de pessoas</label>
+              <input type="number" id="pessoas" name="Convidados" min="1" placeholder="Ex: 50">
+            </div>
+            <div class="field field--full">
+              <label for="tipo">Tipo de evento</label>
+              <select id="tipo" name="Tipo de evento">
+                <option value="">Selecione uma opção</option>
+                <option value="Confraternização corporativa">Confraternização corporativa</option>
+                <option value="Corporativo">Corporativo</option>
+                <option value="Feiras e Exposições">Feiras e Exposições</option>
+                <option value="Happy Hours">Happy Hours</option>
+                <option value="Masterclass e Palestras">Masterclass e Palestras</option>
+                <option value="Mentorias e Treinamentos">Mentorias e Treinamentos</option>
+                <option value="Offsite corporativo">Offsite corporativo</option>
+                <option value="Reuniões de Networking">Reuniões de Networking</option>
+                <option value="Workshops, Conferências e Seminários">Workshops, Conferências e Seminários</option>
+                <option value="Outros">Outros</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="detalhes">Detalhes adicionais</label>
+              <textarea id="detalhes" name="Mensagem" placeholder="Conte um pouco sobre o evento que você imagina..."></textarea>
+            </div>
+          </div>
+          <button type="button" class="btn btn--primary form-submit">
+            Enviar solicitação
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+            </span>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Recebemos sua solicitação.</h3>
+          <p>Em breve nossa equipe entrará em contato para conversar sobre o evento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__logo"><Img src="https://media.dmove.com.br/clients/abrico/photos/Logo_Abrico.webp" alt="Espaço Abricó" /></div>
+    <div class="footer__rule"></div>
+    <div class="footer__meta">
+      <p>Copyright &copy; 2026 Abricó - Todos os direitos reservados</p>
+      <p>Desenvolvido por <a href="https://dmove.com.br" target="_blank" rel="noopener" class="footer__dmove"><Img src="https://media.dmove.com.br/clients/dmove/photos/imgi_73_Versao-Principal-scaled-e1750426923582.webp" alt="Dmove Marketing" /></a></p>
+    </div>
+  </div>
+</footer>
+
+</Base>
+<style is:global>
+  /* Flatpickr — tema escuro para seção contato */
+  .flatpickr-calendar {
+    background: #1c1a14;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 0;
+    box-shadow: 0 16px 48px rgba(0,0,0,.55);
+    font-family: var(--font-body);
+  }
+  .flatpickr-calendar.arrowTop::before,
+  .flatpickr-calendar.arrowTop::after { border-bottom-color: #1c1a14; }
+  .flatpickr-calendar.arrowBottom::before,
+  .flatpickr-calendar.arrowBottom::after { border-top-color: #1c1a14; }
+
+  .flatpickr-months { padding: .5rem 0 0; }
+  .flatpickr-month { color: #FFFDF8; fill: #FFFDF8; }
+  .flatpickr-current-month { font-size: .95rem; font-weight: 500; color: #FFFDF8; }
+  .flatpickr-current-month .flatpickr-monthDropdown-months,
+  .flatpickr-current-month input.cur-year { color: #FFFDF8; background: transparent; }
+  .flatpickr-prev-month, .flatpickr-next-month { color: rgba(255,255,255,.6); fill: rgba(255,255,255,.6); }
+  .flatpickr-prev-month:hover, .flatpickr-next-month:hover { color: #FFFDF8; fill: #FFFDF8; }
+
+  .flatpickr-weekdays { background: transparent; }
+  span.flatpickr-weekday { color: rgba(255,255,255,.4); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+
+  .flatpickr-day { color: rgba(255,255,255,.78); border-radius: 0; }
+  .flatpickr-day:hover { background: rgba(255,255,255,.08); border-color: transparent; color: #FFFDF8; }
+  .flatpickr-day.today { border-color: rgba(51,81,63,.7); }
+  .flatpickr-day.today:hover { background: rgba(51,81,63,.3); border-color: transparent; }
+  .flatpickr-day.selected,
+  .flatpickr-day.selected:hover { background: #33513F; border-color: #33513F; color: #FFFDF8; }
+  .flatpickr-day.flatpickr-disabled,
+  .flatpickr-day.prevMonthDay,
+  .flatpickr-day.nextMonthDay { color: rgba(255,255,255,.18); }
+</style>
+<script>
+  import '../scripts/index.js';
+  import { initForms } from '../scripts/forms.ts';
+  import flatpickr from 'flatpickr';
+  import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
+  import 'flatpickr/dist/flatpickr.min.css';
+
+  flatpickr.localize(Portuguese);
+
+  function applyPhoneMask(input: HTMLInputElement) {
+    input.addEventListener('input', () => {
+      let v = input.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+      else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)/, '($1) $2-$3');
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)/, '($1) $2');
+      else if (v.length > 0) v = v.replace(/^(\d*)/, '($1');
+      input.value = v;
+    });
+  }
+
+  function initPhoneMasks() {
+    document.querySelectorAll<HTMLInputElement>('[data-mask="phone"]').forEach((el) => {
+      if (el.dataset.maskInit) return;
+      el.dataset.maskInit = '1';
+      applyPhoneMask(el);
+    });
+  }
+
+  function initDatepickers() {
+    document.querySelectorAll<HTMLInputElement>('[data-datepicker]').forEach((el) => {
+      if ((el as any)._flatpickr) return;
+      flatpickr(el, { dateFormat: 'd/m/Y', minDate: 'today', disableMobile: false });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { initForms(); initDatepickers(); initPhoneMasks(); initBgSlideshow(); });
+  } else {
+    initForms();
+    initDatepickers();
+    initPhoneMasks();
+    initBgSlideshow();
+  }
+
+  function initBgSlideshow() {
+    const slides = document.querySelectorAll<HTMLElement>('[data-bg-slideshow] .bg-slide');
+    if (slides.length < 2) return;
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 4000);
+  }
+</script>
