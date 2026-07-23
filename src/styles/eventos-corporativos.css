@@ -117,6 +117,8 @@
 }
 
 @media (max-width: 768px) {
+  .br-desktop { display: none; }
+
   .hero {
     justify-content: center;
     gap: 0;
