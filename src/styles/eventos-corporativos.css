@@ -116,8 +116,46 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    gap: 0;
+  }
+  .hero__top {
+    position: static;
+    text-align: center;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+  }
+  .hero__top > * {
+    position: relative;
+    z-index: 2;
+  }
+  .hero .hero__logo {
+    position: absolute;
+    top: clamp(1.75rem, 5vw, 2.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+    height: clamp(44px, 9vw, 60px);
+    z-index: 3;
+  }
+  .hero__bottom {
+    position: absolute;
+    bottom: clamp(2rem, 6vw, 3.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 560px) {
   .ec-estrutura .icon-grid { grid-template-columns: 1fr; }
+  .hero__title { text-wrap: balance; }
 }
 
 /* ==========================================================================

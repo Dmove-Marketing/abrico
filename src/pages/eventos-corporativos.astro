@@ -33,7 +33,7 @@ import '../styles/eventos-corporativos.css';
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="topo">
   <div class="hero__media">
-    <Img src="https://media.dmove.com.br/clients/abrico/photos/ChatGPT_Image_14_de_jul._de_2026,_13_28_43.webp" alt="Vista do Espaço Abricó com área de eventos à beira-mar no litoral norte de São Paulo" priority />
+    <Img src="https://media.dmove.com.br/clients/abrico/photos/HERO_ABRICO_CORP.webp" alt="Vista do Espaço Abricó com área de eventos à beira-mar no litoral norte de São Paulo" priority />
   </div>
   <div class="hero__top container">
     <Img src="https://media.dmove.com.br/clients/abrico/photos/Logo_Abrico.webp" alt="Espaço Abricó" class="hero__logo" />
@@ -59,6 +59,7 @@ import '../styles/eventos-corporativos.css';
       <div class="sobre__main sobre__main--video">
         <video
           src="https://media.dmove.com.br/clients/abrico/videos/A_beleza_particular_desse_lugar_e_incrivel.webm"
+          poster="/images/video-sobre-poster.jpg"
           controls
           playsinline
           preload="metadata"
@@ -306,15 +307,15 @@ import '../styles/eventos-corporativos.css';
             </div>
             <div class="field">
               <label for="data">Data do evento</label>
-              <input type="text" id="data" name="Data do evento" placeholder="dd/mm/aaaa" autocomplete="off" data-datepicker readonly>
+              <input type="text" id="data" name="Data do evento" placeholder="dd/mm/aaaa" autocomplete="off" data-datepicker readonly required>
             </div>
             <div class="field">
               <label for="pessoas">Número de pessoas</label>
-              <input type="number" id="pessoas" name="Convidados" min="1" placeholder="Ex: 50">
+              <input type="number" id="pessoas" name="Convidados" min="1" placeholder="Ex: 50" required>
             </div>
             <div class="field field--full">
               <label for="tipo">Tipo de evento</label>
-              <select id="tipo" name="Tipo de evento">
+              <select id="tipo" name="Tipo de evento" required>
                 <option value="">Selecione uma opção</option>
                 <option value="Confraternização corporativa">Confraternização corporativa</option>
                 <option value="Corporativo">Corporativo</option>
