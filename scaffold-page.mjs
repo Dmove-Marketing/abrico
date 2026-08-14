@@ -325,8 +325,8 @@ function replaceAllForms(html) {
 
     // Extract submit button label
     const btnMatch =
-      formHtml.match(/<button[^>]*type=["']submit["'][^>]*>([\s\S]*?)<\/button>/i) ||
-      formHtml.match(/<input[^>]*type=["']submit["'][^>]*>/i);
+      formHtml.match(/<button[^>]*>([\s\S]*?)<\/button>/i) ||
+      formHtml.match(/<input[^>]*type=["'](?:submit|button)["'][^>]*>/i);
     let submitText = 'Enviar';
     if (btnMatch) {
       if (btnMatch[1] !== undefined) {

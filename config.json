@@ -4,8 +4,8 @@
   "client": "Espaço Abricó",
   "environment": "development",
   "tracking": {
-    "gtm_id": "",
-    "enabled": false
+    "gtm_id": "GTM-TQKZ4NRZ",
+    "enabled": true
   },
   "forms": {
     "lead-form": {
