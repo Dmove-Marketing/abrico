@@ -81,15 +81,15 @@ const MAPS_URL = 'https://maps.app.goo.gl/ZgCbPQFkrQ3bACBeA';
           </div>
           <div class="field">
             <label for="bio-data">Data do evento</label>
-            <input type="text" id="bio-data" name="Data do evento" placeholder="dd/mm/aaaa" autocomplete="off" data-datepicker readonly>
+            <input type="text" id="bio-data" name="Data do evento" placeholder="dd/mm/aaaa" autocomplete="off" data-datepicker readonly required>
           </div>
           <div class="field">
             <label for="bio-pessoas">Número de pessoas</label>
-            <input type="number" id="bio-pessoas" name="Convidados" min="1" placeholder="Ex: 80">
+            <input type="number" id="bio-pessoas" name="Convidados" min="1" placeholder="Ex: 80" required>
           </div>
           <div class="field field--full">
             <label for="bio-tipo">Tipo de evento</label>
-            <select id="bio-tipo" name="Tipo de evento">
+            <select id="bio-tipo" name="Tipo de evento" required>
               <option value="">Selecione uma opção</option>
               <option value="Bodas">Bodas</option>
               <option value="Casamento">Casamento</option>
