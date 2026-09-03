@@ -1,6 +1,5 @@
 ---
 // src/components/forms/LeadForm.astro
-import 'flatpickr/dist/flatpickr.min.css';
 
 interface FieldOption {
   value: string;
@@ -266,10 +265,7 @@ function renderField(f: Field, cxInputClass: string, cxSelectClass: string, cxAr
 
 <script>
   import { initForms } from '../../scripts/forms.ts';
-  import flatpickr from 'flatpickr';
-  import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
-
-  flatpickr.localize(Portuguese);
+  import { initDatepickers } from '../../scripts/datepicker.ts';
 
   function applyPhoneMask(input: HTMLInputElement) {
     input.addEventListener('input', () => {
@@ -288,16 +284,8 @@ function renderField(f: Field, cxInputClass: string, cxSelectClass: string, cxAr
   }
 
   function initExtras() {
-    // Flatpickr em todos os campos de data
-    document.querySelectorAll<HTMLInputElement>('[data-datepicker]').forEach((el) => {
-      if ((el as any)._flatpickr) return;
-      flatpickr(el, {
-        dateFormat: 'd/m/Y',
-        minDate: 'today',
-        disableMobile: false,
-        allowInput: false,
-      });
-    });
+    // Flatpickr sob demanda em todos os campos de data
+    initDatepickers();
 
     // Máscara de telefone
     document.querySelectorAll<HTMLInputElement>('[data-mask="phone"]').forEach((el) => {

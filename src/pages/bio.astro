@@ -4,9 +4,16 @@ import config from '../../config.json';
 import '../styles/index.css';
 import '../styles/bio.css';
 
-const LOGO_SRC = 'https://media.dmove.com.br/clients/abrico/photos/Logo_Abrico.webp';
-const HERO_SRC = 'https://media.dmove.com.br/clients/abrico/photos/steeivan-285.webp';
-const DMOVE_LOGO = 'https://media.dmove.com.br/clients/dmove/photos/imgi_73_Versao-Principal-scaled-e1750426923582.webp';
+// media.dmove.com.br redimensiona on-the-fly: /api/public/resize/<w>/clients/...
+const R = (w: number, path: string) =>
+  `https://media.dmove.com.br/api/public/resize/${w}/clients/${path}`;
+const srcset = (path: string, ws: number[]) =>
+  ws.map((w) => `${R(w, path)} ${w}w`).join(', ');
+const LOGO_SRC = R(320, 'abrico/photos/Logo_Abrico.webp');
+const HERO_PATH = 'abrico/photos/steeivan-285.webp';
+const HERO_SRC = R(1400, HERO_PATH);
+const HERO_SRCSET = srcset(HERO_PATH, [640, 900, 1200, 1600, 2000]);
+const DMOVE_LOGO = R(160, 'dmove/photos/imgi_73_Versao-Principal-scaled-e1750426923582.webp');
 const MAPS_URL = 'https://maps.app.goo.gl/ZgCbPQFkrQ3bACBeA';
 ---
 
@@ -19,7 +26,7 @@ const MAPS_URL = 'https://maps.app.goo.gl/ZgCbPQFkrQ3bACBeA';
 
   <!-- HERO -->
   <section class="bio-hero">
-    <img src={HERO_SRC} alt="Cerimônia à beira-mar no Espaço Abricó" class="bio-hero-img" style="object-position: center center;" />
+    <img src={HERO_SRC} srcset={HERO_SRCSET} sizes="100vw" alt="Cerimônia à beira-mar no Espaço Abricó" class="bio-hero-img" fetchpriority="high" style="object-position: center center;" />
     <div class="bio-hero-overlay"></div>
     <div class="bio-hero-logo">
       <img src={LOGO_SRC} alt="Espaço Abricó" class="bio-logo" />
@@ -150,11 +157,7 @@ const MAPS_URL = 'https://maps.app.goo.gl/ZgCbPQFkrQ3bACBeA';
 
 <script>
   import { initForms } from '../scripts/forms.ts';
-  import flatpickr from 'flatpickr';
-  import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
-  import 'flatpickr/dist/flatpickr.min.css';
-
-  flatpickr.localize(Portuguese);
+  import { initDatepickers } from '../scripts/datepicker.ts';
 
   function applyPhoneMask(input: HTMLInputElement) {
     input.addEventListener('input', () => {
@@ -169,11 +172,7 @@ const MAPS_URL = 'https://maps.app.goo.gl/ZgCbPQFkrQ3bACBeA';
 
   function init() {
     initForms();
-
-    document.querySelectorAll<HTMLInputElement>('[data-datepicker]').forEach((el) => {
-      if ((el as any)._flatpickr) return;
-      flatpickr(el, { dateFormat: 'd/m/Y', minDate: 'today', disableMobile: false });
-    });
+    initDatepickers();
 
     document.querySelectorAll<HTMLInputElement>('[data-mask="phone"]').forEach((el) => {
       if (el.dataset.maskInit) return;

@@ -9,7 +9,8 @@ export default defineConfig({
 
   // Build otimizado
   build: {
-    inlineStylesheets: 'auto',
+    // 'always' → injeta o CSS inline no <head>, elimina o request render-blocking
+    inlineStylesheets: 'always',
   },
 
   // Dev server

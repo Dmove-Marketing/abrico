@@ -192,11 +192,7 @@ const cleanPhone = phone.replace(/\D/g, '');
 </div>
 
 <script>
-  import flatpickr from 'flatpickr';
-  import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
-  import 'flatpickr/dist/flatpickr.min.css';
-
-  flatpickr.localize(Portuguese);
+  import { loadFlatpickr } from '../../scripts/datepicker.ts';
 
   function buildFonte(tracking: Record<string, string>): string {
     const pathname = tracking.landing_page || window.location.pathname;
@@ -327,7 +323,11 @@ const cleanPhone = phone.replace(/\D/g, '');
         datepickerInit = true;
         const dateInput = document.getElementById('wap-data-input') as HTMLInputElement;
         if (dateInput && !(dateInput as any)._flatpickr) {
-          flatpickr(dateInput, { dateFormat: 'd/m/Y', minDate: 'today', disableMobile: false });
+          loadFlatpickr().then((flatpickr) => {
+            if (!(dateInput as any)._flatpickr) {
+              flatpickr(dateInput, { dateFormat: 'd/m/Y', minDate: 'today', disableMobile: false });
+            }
+          });
         }
       }
     });

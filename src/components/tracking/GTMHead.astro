@@ -7,11 +7,33 @@ interface Props {
 const { gtmId } = Astro.props;
 ---
 
-<!-- Google Tag Manager -->
+<!--
+  Google Tag Manager — bootstrap adiado para liberar a main thread durante o
+  carregamento (o GTM + tags dentro dele — Meta Pixel, Clarity, Google Ads —
+  respondem por ~2 s de execução de JS no caminho crítico).
+
+  Carrega na 1ª interação do usuário (scroll / toque / mouse / tecla) OU após
+  3 s, o que vier primeiro. `window.dataLayer` é criado imediatamente, então
+  eventos disparados antes do GTM carregar (ex.: forms.ts) ficam na fila e são
+  processados quando o container inicializa.
+-->
 <script define:vars={{ gtmId }}>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer',gtmId);
+  window.dataLayer = window.dataLayer || [];
+  (function () {
+    var started = false;
+    function startGTM() {
+      if (started) return;
+      started = true;
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=' + gtmId;
+      document.head.appendChild(s);
+    }
+    var evts = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
+    evts.forEach(function (e) {
+      window.addEventListener(e, startGTM, { once: true, passive: true });
+    });
+    setTimeout(startGTM, 3000);
+  })();
 </script>
