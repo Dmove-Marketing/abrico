@@ -24,7 +24,12 @@ function ensureCss() {
   link.id = 'flatpickr-css';
   link.rel = 'stylesheet';
   link.href = '/vendor/flatpickr.min.css';
-  document.head.appendChild(link);
+  // Insere ANTES da primeira folha de estilo da página para que o tema
+  // (`.flatpickr-calendar { background: … }` no CSS de cada página) continue
+  // ganhando na cascata — senão a base branca da lib vence.
+  const firstSheet = document.head.querySelector('style, link[rel="stylesheet"]');
+  if (firstSheet) firstSheet.before(link);
+  else document.head.appendChild(link);
 }
 
 /** Baixa flatpickr + locale pt na primeira chamada; reusa a promise depois. */
