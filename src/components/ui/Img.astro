@@ -11,6 +11,13 @@ interface Props {
   quality?: number;
   class?: string;
   style?: string;
+  /**
+   * Atributo `sizes` (ex.: "100vw" ou "(max-width:900px) 82vw, 580px").
+   * Quando presente numa imagem do media.dmove, gera um `srcset` com
+   * descritores de largura (`w`) — `width` passa a ser o teto (desktop) e o
+   * navegador escolhe a menor variante que serve o slot × DPR.
+   */
+  sizes?: string;
 }
 
 const {
@@ -22,6 +29,7 @@ const {
   quality = 80,
   class: className,
   style,
+  sizes,
 } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
@@ -36,16 +44,47 @@ const mod = !isExternal ? images[key] : undefined;
 if (!isExternal && !mod) {
   console.warn(`[Img] imagem não encontrada: ${key}`);
 }
+
+/**
+ * media.dmove.com.br expõe um endpoint de resize on-the-fly (sharp + cache
+ * imutável): `/api/public/resize/<width>/clients/<...>` → WebP q78, cap 2048px.
+ * Roteamos as imagens desse host por ele, dimensionando pelo `width` da chamada
+ * em vez de servir o arquivo original (que costuma ter 1800px+ / 600 KB).
+ */
+const MEDIA_PREFIX = 'https://media.dmove.com.br/clients/';
+const mediaPath = isExternal && src.startsWith(MEDIA_PREFIX)
+  ? src.slice('https://media.dmove.com.br/'.length) // "clients/abrico/photos/x.webp"
+  : null;
+
+const capW = (w: number) => Math.max(50, Math.min(Math.round(w), 2048));
+const resizeUrl = (w: number) =>
+  `https://media.dmove.com.br/api/public/resize/${capW(w)}/${mediaPath}`;
+
+// Sem `sizes`: um tamanho só (`width` ≈ 1,3–2× o que aparece no mobile).
+// Com `sizes`: srcset com descritores `w` — o navegador escolhe a variante
+// certa por viewport/DPR (mobile pega pequena, desktop pega grande). Nunca
+// use descritor 1x/2x aqui: no mobile (DPR ~2,6) ele força sempre o 2x.
+const LADDER = [400, 560, 720, 900, 1100, 1400, 1700, 2000];
+const srcsetWidths = sizes
+  ? [...new Set([...LADDER.filter((w) => w < width), width])].map(capW)
+  : [];
+const extSrc = mediaPath ? resizeUrl(width) : src;
+const extSrcset = mediaPath && srcsetWidths.length
+  ? srcsetWidths.map((w) => `${resizeUrl(w)} ${w}w`).join(', ')
+  : undefined;
 ---
 
 {isExternal ? (
   <img
-    src={src}
+    src={extSrc}
+    srcset={extSrcset}
+    sizes={extSrcset ? sizes : undefined}
     alt={alt}
     width={width}
     height={height ?? undefined}
     loading={priority ? 'eager' : 'lazy'}
     fetchpriority={priority ? 'high' : undefined}
+    decoding={priority ? undefined : 'async'}
     class={className}
     style={style}
   />
